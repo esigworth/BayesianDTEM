@@ -39,23 +39,3 @@ save(res, file = file_name)
 
 end_time <- Sys.time()  
 
-res1 <- fit_one_type_tau(tau2 = as.numeric(tau2), i = 2, doses = doses, 
-                         nA = 25, nB = 25,
-                         nsubjA = 30, nsubjB = 30,
-                         minsubj = 20, maxsubj = 50,
-                        fit_type = fit_type, seed = seeds[2],
-                        burnin = burnin, thin = thin, iters = iters)
-
-res2 <- fit_one_type_tau(tau2 = as.numeric(tau2), i = 3, doses = doses, 
-                         nA = 25, nB = 25,
-                         nsubjA = 30, nsubjB = 30,
-                         minsubj = 20, maxsubj = 50,
-                         fit_type = "luc", seed = seeds[3],
-                         burnin = burnin, thin = thin, iters = iters)
-
-res3 <- fit_one_type_tau(tau2 = as.numeric(tau2), i = 4, doses = doses, 
-                         nA = 25, nB = 25,
-                         nsubjA = 30, nsubjB = 30,
-                         minsubj = 20, maxsubj = 50,
-                         fit_type = "luc", seed = seeds[4],
-                         burnin = burnin, thin = thin, iters = iters)
