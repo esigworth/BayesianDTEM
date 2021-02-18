@@ -1,6 +1,6 @@
 # Bayesian dose toxo-equivalence model (BayesianDTEM)
 
-The R scripts contained in this repository contain the code necessary to reproduce all simulations from our manuscript, "Building a dose toxo-equivalence model from a Bayesian meta-analysis of published clinical trials." In each folder, there are four main script types as well as four .Rda dataframes containing the seeds and dose samples needed to exactly recreate our findings. The four script types are as follows:
+The R scripts in this repository contain the code necessary to reproduce all simulations from our manuscript, "Building a dose toxo-equivalence model from a Bayesian meta-analysis of published clinical trials." In each folder, there are four main script types as well as four .Rda dataframes containing the seeds and dose samples needed to exactly recreate our findings. The four script types are as follows:
 
 - component_functions : set of functions used to generate data, fit models, and calculate equivalence relationships based on posterior samples
 - full_run : set of functions used to complete one full replication of the simulation, incorporating all functions from component_functions
