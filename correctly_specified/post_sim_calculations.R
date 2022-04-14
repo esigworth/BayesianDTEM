@@ -147,13 +147,13 @@ eval_sim_results_ref <- function(all_sims, tau2, total, betas = c(-.6, -.2, .5, 
     studylevel_mse <- ipd_mse <- rep(NA, 5)
     
     for(i in 1:5){
-      studylevel_avg_bias[i] <- mean(sapply(studylevel_bias, "[[", i), na.rm = TRUE) 
-      ipd_avg_bias[i] <- mean(sapply(ipd_bias, "[[", i), na.rm = TRUE)
+      studylevel_avg_bias[i] <- median(sapply(studylevel_bias, "[[", i), na.rm = TRUE) 
+      ipd_avg_bias[i] <- median(sapply(ipd_bias, "[[", i), na.rm = TRUE)
       
       studylevel_low_high_bias[i,] <- quantile(sapply(studylevel_bias, "[[", i), probs = c(.025, .975), na.rm = TRUE)
       ipd_low_high_bias[i,] <- quantile(sapply(ipd_bias, "[[", i), probs = c(.025, .975), na.rm = TRUE)
       
-      avg_eff[i] <- mean(sapply(eff, "[[", i))
+      avg_eff[i] <- median(sapply(eff, "[[", i))
       
       low_high_eff[i,] <- quantile(sapply(eff, "[[", i), probs = c(.025, .975))
       
@@ -360,13 +360,13 @@ eval_sim_results_ref <- function(all_sims, tau2, total, betas = c(-.6, -.2, .5, 
     studylevel_nocov_mse <- rep(NA, 5)
     
     for(i in 1:7){
-      studylevel_avg_bias[i] <- mean(sapply(studylevel_bias, "[[", i), na.rm = TRUE) 
-      ipd_avg_bias[i] <- mean(sapply(ipd_bias, "[[", i), na.rm = TRUE)
+      studylevel_avg_bias[i] <- median(sapply(studylevel_bias, "[[", i), na.rm = TRUE) 
+      ipd_avg_bias[i] <- median(sapply(ipd_bias, "[[", i), na.rm = TRUE)
       
       studylevel_low_high_bias[i,] <- quantile(sapply(studylevel_bias, "[[", i), probs = c(.025, .975), na.rm = TRUE)
       ipd_low_high_bias[i,] <- quantile(sapply(ipd_bias, "[[", i), probs = c(.025, .975), na.rm = TRUE)
       
-      avg_eff[i] <- mean(sapply(eff, "[[", i))
+      avg_eff[i] <- median(sapply(eff, "[[", i))
       
       low_high_eff[i,] <- quantile(sapply(eff, "[[", i), probs = c(.025, .975))
       
@@ -380,11 +380,11 @@ eval_sim_results_ref <- function(all_sims, tau2, total, betas = c(-.6, -.2, .5, 
     studylevel_nocov_se <- studylevel_nocov_se[sapply(studylevel_nocov_se, length) > 0]
     
     for(i in 1:5){
-      studylevel_nocov_avg_bias[i] <- mean(sapply(studylevel_nocov_bias, "[[", i), na.rm = TRUE) 
+      studylevel_nocov_avg_bias[i] <- median(sapply(studylevel_nocov_bias, "[[", i), na.rm = TRUE) 
       
       studylevel_nocov_low_high_bias[i,] <- quantile(sapply(studylevel_nocov_bias, "[[", i), probs = c(.025, .975), na.rm = TRUE)
       
-      avg_nocov_eff[i] <- mean(sapply(eff_nocov, "[[", i))
+      avg_nocov_eff[i] <- median(sapply(eff_nocov, "[[", i))
       
       low_high_nocov_eff[i,] <- quantile(sapply(eff_nocov, "[[", i), probs = c(.025, .975))
       
